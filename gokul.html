@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gokul</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="company-name" style="display:none">GOKUL</h1>
+
+        <img src="images/gokul.png" alt="">
+
+        <form id="itemForm">
+            
+            <div class="items">
+                <label>
+                    <input type="checkbox" name="checkbox" value="Masala cup">
+                    <div class="text">Masala cup</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Tomato cup">
+                    <div class="text">Tomato cup</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Plane">
+                    <div class="text">Plane</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="ABCD">
+                    <div class="text">ABCD</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Chowkadi">
+                    <div class="text">Chowkadi</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Plain Ponga">
+                    <div class="text">Plain Ponga</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Wheels">
+                    <div class="text">Wheels</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Pasta">
+                    <div class="text">Pasta</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Trayo">
+                    <div class="text">Trayo</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Bhavnagri gathiya">
+                    <div class="text">Bhavnagri gathiya</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Nylon gathiya">
+                    <div class="text">Nylon gathiya</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Sev">
+                    <div class="text">Sev</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Papdi">
+                    <div class="text">Papdi</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Tikha mitha mix">
+                    <div class="text">Tikha mitha mix</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Dabela Chana">
+                    <div class="text">Dabela Chana</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Chana dal">
+                    <div class="text">Chana dal</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Sakkarpara">
+                    <div class="text">Sakkarpara</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Masala noodles">
+                    <div class="text">Masala noodles</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Masala kurkure">
+                    <div class="text">Masala kurkure</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Tomato kurkure">
+                    <div class="text">Tomato kurkure</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Masala wafers">
+                    <div class="text">Masala wafers</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Mori wafers">
+                    <div class="text">Mori wafers</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" value="Farali chevdo">
+                    <div class="text">Farali chevdo</div>
+                    <input type="number" name="amount" step="0.5" min="0">
+                </label>
+            </div>
+        </form>
+
+        <button onclick="downloadImage()" id="download-button" class="button"><img src="images/downloadicon.png" alt="download"></button>
+        <!-- <button type="button" onclick="getSelectedItems()" id="get-items-button" class="button">Make List</button> -->
+        
+        <div class="download-pic" id="download-pic">
+            <div id="selectedItems">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+$list-background-color : rgb(255, 255, 255);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: #04192d;
+}
+
+.background {
+    background: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.navbar {
+    width: 450px;
+    height: 100dvh;
+    background: white;
+
+    .navbar-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin: auto;
+        padding-bottom: 100px;
+        
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(5px 5px 2px rgba(189, 189, 189, 0.515));
+            transform: scale(1);
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                filter: drop-shadow(20px 20px 4px rgba(189, 189, 189, 0.515));
+                transform: scale(1.1);
+            }
+            
+        }
+    }
+}
+
+.download-pic {
+ 
+    background: $list-background-color;
+    padding: 15px;
+    display: none;
+
+    #selectedItems {
+        background: $list-background-color;
+        border: 1px solid rgb(0, 0, 0);
+        padding: 10px;
+        color: black;
+        h1 {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            margin-left: 15px;
+            color: rgb(0, 0, 0);
+        }
+
+        .date {
+            text-align: right;
+            color: rgb(0, 0, 0);
+            font-size: 10px;
+        }
+
+        img {
+            mix-blend-mode: multiply;
+            width: 100px;
+            display: block;
+            margin: 0px auto;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.container {
+    // background: orange;
+    width: 450px;
+    padding: 20px 20px 50px 20px;
+    // border: 1px solid white;
+    h1 {
+        text-align: center;
+        margin: 20px 0px;
+    }
+
+    img {
+        display: block;
+        width: 100px;
+        margin: 0px auto;
+        margin-bottom: 20px;
+    }
+}
+form {
+    display: flex;
+    justify-content: center;
+
+    .items {
+        width: 100%;
+    }
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+    input[type="number"] {
+        background: none;
+        border: 1px solid white;
+        outline: none;
+        padding: 10px;
+        font-size: 20px;
+        width: 100px;
+        border-radius: 10px;
+    }
+
+    input[type="checkbox"] {
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        // background: white;
+        border: 2px solid white;
+        position: relative;
+        transition: all .2s ease-in-out;
+
+        &::before {
+            position: absolute;
+            top: -19px;
+            left: 3px;
+            content: '\2713';
+            font-size: 35px;
+            color: rgb(0, 197, 0);
+            transform: scale(0);
+            transition: all .2s ease-in-out;
+        }
+
+        &:checked {
+            
+            &::before {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .text {
+        flex: 0 0 50%;
+       
+    }
+}
+
+.button {
+    position: fixed;
+    background: rgb(255, 111, 0);
+    padding: 20px;
+    border-radius: 50%;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    right: 15px;
+    bottom: 15px;
+
+    &:hover {
+        background: rgb(255, 47, 0);
+    }
+
+    img {
+        width: 25px;
+        margin: 0px;
+        filter: invert(100%);
+    }
+}
