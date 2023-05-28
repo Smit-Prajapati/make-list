@@ -3,6 +3,17 @@ const button = document.getElementById("button");
 const amountInput = document.getElementsByName("amount");
 const checkboxes = document.getElementsByName("checkbox");
 
+
+//change color of border
+for (let i = 0; i < checkboxes.length; i++) {
+    console.log(checkboxes[i].checked);
+    amountInput[i].addEventListener("input", () => {
+      if (+amountInput[i].value > 0) {
+        amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
+      } 
+    });
+}
+
 //true if amount more than 0
 for (let i = 0; i < checkboxes.length; i++) {
   amountInput[i].addEventListener("input", () => {
@@ -12,6 +23,21 @@ for (let i = 0; i < checkboxes.length; i++) {
       checkboxes[i].checked = false;
     }
   });
+}
+
+
+
+//value 1 if checked
+for (let i = 0; i < checkboxes.length; i++) {
+
+    checkboxes[i].addEventListener("input", () => {
+      if (checkboxes[i].checked == true && amountInput[i].value == "") {
+        amountInput[i].value = 1;
+        amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
+      } else {
+        amountInput[i].value = "";
+      }
+    });
 }
 
 //get seleccted item
@@ -46,7 +72,7 @@ function displaySelectedItems(items) {
     var downloadPicDiv = document.getElementById("download-pic");
     downloadPicDiv.style.display = "block";
 
-    selectedItemsDiv.appendChild(companyLogo());
+    selectedItemsDiv.appendChild(getCompanyLogo());
 
     var div = document.createElement("div");
 
@@ -65,7 +91,7 @@ function displaySelectedItems(items) {
   }
 }
 
-function companyLogo() {
+function getCompanyLogo() {
   var companyName = document.getElementById("company-name");
   var img = document.createElement("img");
   if (companyName.innerHTML === "GOKUL") {
@@ -98,18 +124,15 @@ function downloadImage() {
   getSelectedItems();
   if (download == true) {
     location.href = "#download-pic";
+    const divElement = document.getElementById("download-pic");
 
-    setTimeout(function () {
-      const divElement = document.getElementById("download-pic");
-
-      html2canvas(divElement).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const link = document.createElement("a");
-        link.href = imgData;
-        link.download = getPicName() + ".png";
-        link.click();
-      });
-    }, 1000);
+    html2canvas(divElement).then((canvas) => {
+    const imgData = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = imgData;
+    link.download = getPicName() + ".png";
+    link.click();
+    });
   }
 }
 
