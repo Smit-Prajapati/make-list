@@ -4,23 +4,17 @@ const amountInput = document.getElementsByName("amount");
 const checkboxes = document.getElementsByName("checkbox");
 
 
-//change color of border
-for (let i = 0; i < checkboxes.length; i++) {
-    console.log(checkboxes[i].checked);
-    amountInput[i].addEventListener("input", () => {
-      if (+amountInput[i].value > 0) {
-        amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
-      } 
-    });
-}
+
 
 //true if amount more than 0
 for (let i = 0; i < checkboxes.length; i++) {
   amountInput[i].addEventListener("input", () => {
     if (+amountInput[i].value > 0) {
       checkboxes[i].checked = true;
+      amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
     } else {
       checkboxes[i].checked = false;
+      amountInput[i].style.border = " 1px solid grey";
     }
   });
 }
