@@ -36,6 +36,7 @@ for (let i = 0; i < checkboxes.length; i++) {
         amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
       } else {
         amountInput[i].value = "";
+        amountInput[i].style.border = " 1px solid grey";
       }
     });
 }
