@@ -4,6 +4,58 @@ const amountInput = document.getElementsByName("amount");
 const checkboxes = document.getElementsByName("checkbox");
 
 
+const gokulItemsList = ["Masala cup", "Tomato cup", "Plane", "ABCD", "Chowkadi", "Plain ponga", "Wheels", "Pasta", "Trayo", "Bhavnagri gathiya", "Nylon gathiya", "Sev", "Papdi", "Tikha mitha mix", "Dabela chana", "Chana dal", "Sakkarpara", "Masala noodles", "Masala kurkure", "Tomato kurkure", "Masala wafers", "Mori wafers", "Farali chevdo"];
+
+const realItemsList = ["Ratlami sev", "Aaloo sev", "Sing bhujiya", "Moong dal", "Soya stick", "Soya chips", "Tomato kurkure", "Masala kurkure", "Mora sevmamra", "Tikha sevmamra", "Bhel mamra", "Farali tikho", "Farali mitho", "Tihi papdi", "Mori papdi", "Pasta", "Farali wafers", "Mori Wafers", "Noodles", "Polo ring", "Jeera papad", "Tikha papad", "Tarzan", "Mora bhoongala", "Pani puri cup"];
+
+const companyName = document.getElementById("company-name").innerHTML;
+if(companyName == "GOKUL") {
+  items = gokulItemsList;
+} else {
+  items = realItemsList;
+}
+
+const itemsContainer = document.getElementById("items");
+
+for(let i = 0; i < items.length; i++) {
+  itemsContainer.appendChild(createLabel(i));
+}
+
+function createCheckbox(value) {
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.name = "checkbox";
+  checkbox.value = value;
+
+  return checkbox;
+}
+
+function createNameDiv(value) {
+  const div = document.createElement("div");
+  div.classList.add("text");
+  div.innerHTML = value;
+
+  return div;
+}
+
+function createInputbox() {
+  const inputBox = document.createElement("input");
+  inputBox.type = "number";
+  inputBox.name = "amount";
+  inputBox.step = 0.5;
+  inputBox.min = 0;
+
+  return inputBox;
+}
+
+function createLabel(itemNumber) {
+  const label = document.createElement("label");
+  label.appendChild(createCheckbox(items[itemNumber]));
+  label.appendChild(createNameDiv(items[itemNumber]));
+  label.appendChild(createInputbox());
+
+  return label;
+}
 
 
 //true if amount more than 0
@@ -19,13 +71,11 @@ for (let i = 0; i < checkboxes.length; i++) {
   });
 }
 
-
-
 //value 1 if checked
 for (let i = 0; i < checkboxes.length; i++) {
 
     checkboxes[i].addEventListener("input", () => {
-      if (checkboxes[i].checked == true && amountInput[i].value == "") {
+      if (checkboxes[i].checked == true) {
         amountInput[i].value = 1;
         amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
       } else {
@@ -35,14 +85,28 @@ for (let i = 0; i < checkboxes.length; i++) {
     });
 }
 
+function downloadImage() {
+  getSelectedItems();
+  if (download == true) {
+    location.href = "#download-pic";
+    const divElement = document.getElementById("download-pic");
+
+    html2canvas(divElement).then((canvas) => {
+    const imgData = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = imgData;
+    link.download = getPicName() + ".png";
+    link.click();
+    });
+  }
+}
+
 //get seleccted item
 function getSelectedItems() {
 
-  var selectedItemsDiv = document.getElementById("download-pic");
-
   const selectedItems = [];
   for (var i = 0; i < checkboxes.length; i++) {
-    if (checkboxes[i].checked && +amountInput[i].value > 0) {
+    if (checkboxes[i].checked) {
       var print = checkboxes[i].value + " : " + amountInput[i].value;
       selectedItems.push(print);
     }
@@ -56,15 +120,13 @@ function displaySelectedItems(items) {
   selectedItemsDiv.innerHTML = "";
 
   if (items.length === 0) {
-
     alert("No items selected.");
     download = false;
 
   } else {
-
     download = true;
-
     var downloadPicDiv = document.getElementById("download-pic");
+
     downloadPicDiv.style.display = "block";
 
     selectedItemsDiv.appendChild(getCompanyLogo());
@@ -87,13 +149,10 @@ function displaySelectedItems(items) {
 }
 
 function getCompanyLogo() {
-  var companyName = document.getElementById("company-name");
+  var logo = document.getElementById("company-logo").src;
+  console.log(logo);
   var img = document.createElement("img");
-  if (companyName.innerHTML === "GOKUL") {
-    img.src = "images/gokul.png";
-  } else {
-    img.src = "images/real.png";
-  }
+  img.src = logo;
 
   return img;
 }
@@ -113,22 +172,6 @@ function getDate() {
     yyyy +
     ") "
   );
-}
-
-function downloadImage() {
-  getSelectedItems();
-  if (download == true) {
-    location.href = "#download-pic";
-    const divElement = document.getElementById("download-pic");
-
-    html2canvas(divElement).then((canvas) => {
-    const imgData = canvas.toDataURL("image/png");
-    const link = document.createElement("a");
-    link.href = imgData;
-    link.download = getPicName() + ".png";
-    link.click();
-    });
-  }
 }
 
 function getPicName() {
