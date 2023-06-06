@@ -4,7 +4,7 @@ const amountInput = document.getElementsByName("amount");
 const checkboxes = document.getElementsByName("checkbox");
 
 
-const gokulItemsList = ["Masala cup", "Tomato cup", "Plane", "ABCD", "Chowkadi", "Plain ponga", "Wheels", "Pasta", "Trayo", "Bhavnagri gathiya", "Nylon gathiya", "Sev", "Papdi", "Tikha mitha mix", "Dabela chana", "Chana dal", "Sakkarpara", "Masala noodles", "Masala kurkure", "Tomato kurkure", "Masala wafers", "Mori wafers", "Farali chevdo", "Adad papad (₹10)", "Chanadal (500g)", "Dabela chana (500g)", "Bhavnagari gathiya (500g)", "Nylon gathiya (500g)", "Vanela gathiya (500g)", "Ratlami sev (500g)", "Sing bhujiya (500g)", "Sakkarpara (500g)"];
+const gokulItemsList = ["Masala cup", "Tomato cup", "Plane", "ABCD", "Chowkadi", "Plain ponga", "Wheels", "Pasta", "Trayo", "Bhavnagri gathiya", "Nylon gathiya", "Sev", "Papdi", "Tikha mitha mix", "Dabela chana", "Chana dal", "Sakkarpara", "Masala noodles", "Masala kurkure", "Tomato kurkure", "Masala wafers", "Mori wafers", "Farali chevdo", "Vanela gathiya", "Bhakharwadi", "Tikha gathiya", "Adad papad (₹10)", "Chanadal (500g)", "Dabela chana (500g)", "Bhavnagari gathiya (500g)", "Nylon gathiya (500g)", "Vanela gathiya (500g)", "Ratlami sev (500g)", "Sing bhujiya (500g)", "Sakkarpara (500g)"];
 
 const realItemsList = ["Ratlami sev", "Aaloo sev", "Sing bhujiya", "Moong dal", "Soya stick", "Soya chips", "Tomato kurkure", "Masala kurkure", "Mora sevmamra", "Tikha sevmamra", "Bhel mamra", "Farali tikho", "Farali mitho", "Tihi papdi", "Mori papdi", "Pasta", "Farali wafers", "Mori Wafers", "Noodles", "Polo ring", "Jeera papad", "Tikha papad", "Tarzan", "Mora bhoongala", "Pani puri cup"];
 
