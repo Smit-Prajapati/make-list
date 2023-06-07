@@ -2,13 +2,14 @@ var download = false;
 const button = document.getElementById("button");
 const amountInput = document.getElementsByName("amount");
 const checkboxes = document.getElementsByName("checkbox");
-
+var totalItems = 0;
 
 const gokulItemsList = ["Masala cup", "Tomato cup", "Plane", "ABCD", "Chowkadi", "Plain ponga", "Wheels", "Pasta", "Trayo", "Bhavnagri gathiya", "Nylon gathiya", "Sev", "Papdi", "Tikha mitha mix", "Dabela chana", "Chana dal", "Sakkarpara", "Masala noodles", "Masala kurkure", "Tomato kurkure", "Masala wafers", "Mori wafers", "Farali chevdo", "Vanela gathiya", "Bhakharwadi", "Tikha gathiya", "Ratlami sev","Adad papad (₹10)", "Chanadal (500g)", "Dabela chana (500g)", "Bhavnagari gathiya (500g)", "Nylon gathiya (500g)", "Vanela gathiya (500g)", "Ratlami sev (500g)", "Sing bhujiya (500g)", "Sakkarpara (500g)"];
 
 const realItemsList = ["Ratlami sev", "Aaloo sev", "Sing bhujiya", "Moong dal", "Soya stick", "Soya chips", "Tomato kurkure", "Masala kurkure", "Mora sevmamra", "Tikha sevmamra", "Bhel mamra", "Farali tikho", "Farali mitho", "Tihi papdi", "Mori papdi", "Pasta", "Farali wafers", "Mori Wafers", "Noodles", "Polo ring", "Jeera papad", "Tikha papad", "Tarzan", "Mora bhoongala", "Pani puri cup"];
 
 const companyName = document.getElementById("company-name").innerHTML;
+
 if(companyName == "GOKUL") {
   items = gokulItemsList;
 } else {
@@ -101,14 +102,16 @@ function downloadImage() {
   }
 }
 
+
 //get seleccted item
 function getSelectedItems() {
-
+  totalItems = 0;
   const selectedItems = [];
   for (var i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
       var print = checkboxes[i].value + " : " + amountInput[i].value;
       selectedItems.push(print);
+      totalItems = totalItems + (+amountInput[i].value);
     }
   }
   displaySelectedItems(selectedItems);
@@ -140,6 +143,12 @@ function displaySelectedItems(items) {
     }
 
     selectedItemsDiv.appendChild(div);
+
+    var totalItemsDiv = document.createElement("div");
+    totalItemsDiv.innerHTML = "Total items : " + totalItems;
+    totalItemsDiv.classList.add("total-items");
+    selectedItemsDiv.appendChild(totalItemsDiv);
+
 
     var dateDiv = document.createElement("div");
     dateDiv.innerHTML = getDate();
@@ -183,5 +192,5 @@ function getPicName() {
   var min = today.getMinutes();
   var sec = today.getSeconds();
 
-  return (("0" + dd).slice(-2) +"" +("0" + (mm + 1)).slice(-2) +"" +yyyy +"" +("0" + hour).slice(-2) +"" +("0" + min).slice(-2) +"" +("0" + sec).slice(-2));
+  return (companyName + "_" + ("0" + dd).slice(-2) +"_" +("0" + (mm + 1)).slice(-2) +"_" +yyyy +"_" +("0" + hour).slice(-2) +"-" +("0" + min).slice(-2) +"-" +("0" + sec).slice(-2));
 }
