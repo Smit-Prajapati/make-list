@@ -79,6 +79,10 @@ body {
   margin-left: 15px;
   color: rgb(0, 0, 0);
 }
+.download-pic #selectedItems .total-items {
+  margin-left: 15px;
+  color: rgb(227, 0, 0);
+}
 .download-pic #selectedItems .date {
   text-align: right;
   color: rgb(0, 0, 0);
@@ -180,4 +184,4 @@ label .text {
   width: 25px;
   margin: 0px;
   filter: invert(100%);
-}/*# sourceMappingURL=style.css.map */
+}
