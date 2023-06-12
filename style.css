@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +27,7 @@ body {
 
 .navbar {
   width: 450px;
-  height: 100dvh;
+  min-height: 100dvh;
   background: white;
 }
 .navbar .navbar-container {
@@ -41,6 +41,10 @@ body {
 }
 .navbar .navbar-container a {
   -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s ease-in;
+}
+.navbar .navbar-container a:hover {
+  transform: scale(1.1);
 }
 .navbar .navbar-container img {
   height: 100%;
@@ -53,62 +57,31 @@ body {
 }
 .navbar .navbar-container img:hover {
   filter: drop-shadow(20px 20px 4px rgba(189, 189, 189, 0.515));
-  transform: scale(1.1);
-}
-
-.download-pic {
-  background: rgb(255, 255, 255);
-  padding: 15px;
-  display: none;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.download-pic #selectedItems {
-  background: rgb(255, 255, 255);
-  border: 1px solid rgb(0, 0, 0);
-  padding: 10px;
-  color: black;
-}
-.download-pic #selectedItems h1 {
-  color: rgb(0, 0, 0);
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-.download-pic #selectedItems p {
-  margin-bottom: 15px;
-  margin-left: 15px;
-  color: rgb(0, 0, 0);
-}
-.download-pic #selectedItems .total-items {
-  margin-left: 15px;
-  color: rgb(227, 0, 0);
-}
-.download-pic #selectedItems .date {
-  text-align: right;
-  color: rgb(0, 0, 0);
-  font-size: 10px;
-}
-.download-pic #selectedItems img {
-  mix-blend-mode: multiply;
-  width: 100px;
-  display: block;
-  margin: 0px auto;
-  margin-bottom: 20px;
+  animation: bouncing 0.5s 0.3s;
 }
 
 .container {
   width: 450px;
-  padding: 20px 20px 50px 20px;
+  padding-bottom: 100px;
 }
 .container h1 {
   text-align: center;
   margin: 20px 0px;
 }
-.container img {
-  display: block;
+.container .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.container .topbar img {
   width: 100px;
-  margin: 0px auto;
   margin-bottom: 20px;
+}
+.container .topbar .gujarati-text {
+  vertical-align: 10px;
+  font-size: 20px;
+  margin-left: 15px;
 }
 
 form {
@@ -124,8 +97,12 @@ label {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
   font-size: 20px;
+  font-weight: 700;
+  padding: 15px 20px;
+}
+label:nth-child(odd) {
+  background: rgb(248, 248, 248);
 }
 label input[type=number] {
   background: white;
@@ -135,11 +112,16 @@ label input[type=number] {
   font-size: 20px;
   width: 100px;
   border-radius: 10px;
+  font-weight: 700;
 }
 label input[type=number]:focus {
   border: 1px solid black;
 }
-label input[type=checkbox] {
+label .text {
+  flex: 0 0 50%;
+}
+
+input[type=checkbox] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -150,7 +132,7 @@ label input[type=checkbox] {
   position: relative;
   transition: all 0.2s ease-in-out;
 }
-label input[type=checkbox]::before {
+input[type=checkbox]::before {
   position: absolute;
   top: -19px;
   left: 3px;
@@ -160,11 +142,8 @@ label input[type=checkbox]::before {
   transform: scale(0);
   transition: all 0.2s ease-in-out;
 }
-label input[type=checkbox]:checked::before {
+input[type=checkbox]:checked::before {
   transform: scale(1);
-}
-label .text {
-  flex: 0 0 50%;
 }
 
 .button {
@@ -184,4 +163,79 @@ label .text {
   width: 25px;
   margin: 0px;
   filter: invert(100%);
+}
+
+.download-pic {
+  background: rgb(255, 255, 255);
+  padding: 15px;
+  display: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.download-pic #selectedItems {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  color: black;
+  font-weight: 600;
+}
+.download-pic #selectedItems h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.download-pic #selectedItems .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.download-pic #selectedItems .item:nth-child(odd) {
+  background: rgb(248, 248, 248);
+}
+.download-pic #selectedItems .item p {
+  color: rgb(0, 0, 0);
+}
+.download-pic #selectedItems .total-div {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  padding: 10px 15px;
+  background: rgb(255, 196, 0);
+  margin: 20px 15px 25px 15px;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 15px;
+}
+.download-pic #selectedItems .total-div .total-items {
+  color: rgb(255, 255, 255);
+}
+.download-pic #selectedItems .total-div .total-price {
+  color: white;
+}
+.download-pic #selectedItems .date {
+  text-align: right;
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+  font-weight: 700;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.download-pic #selectedItems img {
+  width: 100px;
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+
+@keyframes bouncing {
+  from, to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
 }
