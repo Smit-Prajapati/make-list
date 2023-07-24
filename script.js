@@ -108,6 +108,7 @@ const gokulItemsList = [
   {name: 'Bhakharwadi', price: 51},
   {name: 'Tikha gathiya', price: 51},
   {name: 'Ratlami sev', price: 51},
+  {name: 'Sing Bhujia, price: 51},
   {name: 'Adad papad (₹10)', price: 8},
   {name: 'Chanadal (500g)', price: 90},
   {name: 'Dabela chana (500g)', price: 90},
