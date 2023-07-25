@@ -150,10 +150,11 @@ input[type="checkbox"] {
     width: 30px;
     height: 30px;
     border-radius: 8px;
-    // background: white;
+    background: #212121;
     border: 2px solid black;
     position: relative;
     transition: all .2s ease-in-out;
+
 
     &::before {
         position: absolute;
@@ -210,7 +211,6 @@ input[type="checkbox"] {
     background: $list-background-color;
     padding: 15px;
     display: none;
-    box-shadow: black 0px 8px 24px;
 
     #selectedItems {
         background: $list-background-color;
