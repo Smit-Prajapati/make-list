@@ -132,6 +132,7 @@ input[type=checkbox] {
   width: 30px;
   height: 30px;
   border-radius: 8px;
+  background: #212121;
   border: 2px solid black;
   position: relative;
   transition: all 0.2s ease-in-out;
@@ -178,7 +179,6 @@ input[type=checkbox]:checked::before {
   background: rgb(255, 255, 255);
   padding: 15px;
   display: none;
-  box-shadow: black 0px 8px 24px;
 }
 .download-pic #selectedItems {
   background: rgb(255, 255, 255);
