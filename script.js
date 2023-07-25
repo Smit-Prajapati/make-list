@@ -101,8 +101,8 @@ const gokulItemsList = [
   {name: 'Masala noodles', price: 42.50},
   {name: 'Masala kurkure', price: 51},
   {name: 'Tomato kurkure', price: 51},
-  {name: 'Masala wafers', price: 52},
-  {name: 'Mori wafers', price: 52},
+  {name: 'Masala wafers', price: 51},
+  {name: 'Mori wafers', price: 51},
   {name: 'Farali chevdo', price: 51},
   {name: 'Vanela gathiya', price: 51},
   {name: 'Bhakharwadi', price: 51},
@@ -187,10 +187,16 @@ for (let i = 0; i < checkboxes.length; i++) {
   amountInput[i].addEventListener("input", () => {
     if (+amountInput[i].value > 0) {
       checkboxes[i].checked = true;
-      amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
+
+      if(i%2 == 0) {
+        amountInput[i].style.border = " 2px solid #BB65FF";
+      } else {
+        amountInput[i].style.border = " 2px solid #5857FD";
+      }
+      
     } else {
       checkboxes[i].checked = false;
-      amountInput[i].style.border = " 1px solid grey";
+      amountInput[i].style.border = " 2px solid black";
     }
   });
 }
@@ -201,10 +207,10 @@ for (let i = 0; i < checkboxes.length; i++) {
     checkboxes[i].addEventListener("input", () => {
       if (checkboxes[i].checked == true) {
         amountInput[i].value = 1;
-        amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
+        amountInput[i].style.border = " 2px solid #5857FD";
       } else {
         amountInput[i].value = "";
-        amountInput[i].style.border = " 1px solid grey";
+        amountInput[i].style.border = " 2px solid black";
       }
     });
 }
