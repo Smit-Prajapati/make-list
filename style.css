@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: black;
   font-family: "Quicksand", sans-serif;
 }
 
@@ -15,11 +14,11 @@ html {
 body {
   display: flex;
   justify-content: center;
-  background: white;
+  background: #111111;
 }
 
 .background {
-  background: white;
+  background: #111111;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -28,7 +27,7 @@ body {
 .navbar {
   width: 450px;
   min-height: 100dvh;
-  background: white;
+  background: #171717;
 }
 .navbar .navbar-container {
   height: 100%;
@@ -51,16 +50,17 @@ body {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: drop-shadow(5px 5px 2px rgba(189, 189, 189, 0.515));
   transform: scale(1);
   transition: all 0.3s ease-in-out;
+  filter: brightness(0.5) drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.515));
 }
 .navbar .navbar-container img:hover {
-  filter: drop-shadow(20px 20px 4px rgba(189, 189, 189, 0.515));
+  filter: brightness(1) drop-shadow(20px 20px 4px rgba(0, 0, 0, 0.515));
   animation: bouncing 0.5s 0.3s;
 }
 
 .container {
+  background: #171717;
   width: 450px;
   padding-bottom: 100px;
 }
@@ -77,11 +77,13 @@ body {
 .container .topbar img {
   width: 100px;
   margin-bottom: 20px;
+  filter: brightness(0.7);
 }
 .container .topbar .gujarati-text {
   vertical-align: 10px;
   font-size: 20px;
   margin-left: 15px;
+  color: #9C9C9C;
 }
 
 form {
@@ -102,23 +104,25 @@ label {
   padding: 15px 20px;
 }
 label:nth-child(odd) {
-  background: rgb(248, 248, 248);
+  background: #111111;
 }
 label input[type=number] {
-  background: white;
-  border: 1px solid grey;
+  background: #212121;
+  border: 2px solid black;
   outline: none;
   padding: 10px;
   font-size: 20px;
   width: 100px;
   border-radius: 10px;
   font-weight: 700;
+  color: white;
 }
 label input[type=number]:focus {
-  border: 1px solid black;
+  border: 2px solid black;
 }
 label .text {
   flex: 0 0 50%;
+  color: #9C9C9C;
 }
 
 input[type=checkbox] {
@@ -138,7 +142,9 @@ input[type=checkbox]::before {
   left: 3px;
   content: "✓";
   font-size: 35px;
-  color: rgb(255, 196, 0);
+  background: -webkit-linear-gradient(#07D1EC, #BB65FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transform: scale(0);
   transition: all 0.2s ease-in-out;
 }
@@ -148,28 +154,31 @@ input[type=checkbox]:checked::before {
 
 .button {
   position: fixed;
-  background: rgb(255, 196, 0);
+  background: linear-gradient(135deg, rgb(187, 101, 255) 0%, rgb(88, 87, 253) 50%, rgb(7, 209, 236) 100%);
   padding: 20px;
   border-radius: 50%;
   border: none;
   transition: all 0.5s ease-in-out;
   right: 15px;
   bottom: 15px;
+  aspect-ratio: 1;
+  box-shadow: #BB65FF -5px -5px 15px 0px, #5857FD 0px 0px 15px 0px, #07D1EC 2px 2px 15px 0px;
 }
 .button:hover {
-  background: rgb(255, 162, 0);
+  box-shadow: #07D1EC 2px 2px 30px 0px;
 }
 .button img {
   width: 25px;
   margin: 0px;
   filter: invert(100%);
+  opacity: 0.5;
 }
 
 .download-pic {
   background: rgb(255, 255, 255);
   padding: 15px;
   display: none;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: black 0px 8px 24px;
 }
 .download-pic #selectedItems {
   background: rgb(255, 255, 255);
@@ -238,4 +247,4 @@ input[type=checkbox]:checked::before {
   75% {
     transform: scale(0.95, 1.05);
   }
-}
+}/*# sourceMappingURL=style.css.map */
