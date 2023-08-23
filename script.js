@@ -45,6 +45,7 @@ const realItemsListGujarati = [
   {name: 'સોયા સ્ટિક', price: 51},
   {name: 'સોયા ચિપ્સ', price: 51},
   {name: 'ટોમેટો કુરકુરે', price: 51},
+  {name: 'પાણીપુરી વાડકા', price: 52},
   {name: 'મસાલા કુરકુરે', price: 51},
   {name: 'મોરા  સેવમમરા', price: 51},
   {name: 'તીખા સેવમમરા', price:51},
@@ -61,7 +62,7 @@ const realItemsListGujarati = [
   {name: 'જીરા પાપડ', price: 50},
   {name: 'તીખા પાપડ', price: 50},
   {name: 'ટાર્ઝન', price: 50},
-  {name: 'મોરા ભૂંગળા', price: 50},
+  {name: 'મોરા ભૂંગળા', price: 52},
   {name: 'પાણી પુરી કુરકુરે', price: 51},
   {name: 'ચાના દાળ', price: 51},
   {name: 'ચાના ચોર ગરમ', price: 51},
@@ -76,6 +77,7 @@ const realItemsListGujarati = [
   {name: 'પૌવા ચેવડા', price: 51},
   {name: 'મકાઈ ચેવડા', price: 51},
   {name: 'તીખા મીઠા મિક્સ', price: 51},
+  {name: 'ઇનામ', price: 50},
 ];
 
 
@@ -111,15 +113,15 @@ const gokulItemsList = [
   {name: 'Sing bhujia', price: 51},
   {name: 'Nylon chivda', price: 51},
   {name: 'Adad papad (₹10)', price: 8},
-  {name: 'Chanadal (500g)', price: 90},
-  {name: 'Dabela chana (500g)', price: 90},
-  {name: 'Bhavnagari gathiya (500g)', price: 90},
-  {name: 'Nylon gathiya (500g)', price: 90},
-  {name: 'Vanela gathiya (500g)', price: 90},
-  {name: 'Ratlami sev (500g)', price: 90},
-  {name: 'Sing bhujiya (500g)', price: 90},
-  {name: 'Sakkarpara (500g)', price: 90},
-  {name: 'Tikha mitha mix (500g)', price: 65},
+  {name: 'Chanadal (500g)', price: 60},
+  {name: 'Dabela chana (500g)', price: 60},
+  {name: 'Bhavnagari gathiya (500g)', price: 60},
+  {name: 'Nylon gathiya (500g)', price: 60},
+  {name: 'Vanela gathiya (500g)', price: 60},
+  {name: 'Ratlami sev (500g)', price: 60},
+  {name: 'Sing bhujiya (500g)', price: 60},
+  {name: 'Sakkarpara (500g)', price: 60},
+  {name: 'Tikha mitha mix (500g)', price: 60},
 ];
 
 gujaratiCheckBox.addEventListener('change', function() {
