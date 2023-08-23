@@ -184,22 +184,15 @@ function createLabel(itemNumber) {
   return label;
 }
 
-
 //true if amount more than 0
 for (let i = 0; i < checkboxes.length; i++) {
   amountInput[i].addEventListener("input", () => {
     if (+amountInput[i].value > 0) {
       checkboxes[i].checked = true;
-
-      if(i%2 == 0) {
-        amountInput[i].style.border = " 2px solid #BB65FF";
-      } else {
-        amountInput[i].style.border = " 2px solid #5857FD";
-      }
-      
+      amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
     } else {
       checkboxes[i].checked = false;
-      amountInput[i].style.border = " 2px solid black";
+      amountInput[i].style.border = "1px solid grey";
     }
   });
 }
@@ -210,10 +203,10 @@ for (let i = 0; i < checkboxes.length; i++) {
     checkboxes[i].addEventListener("input", () => {
       if (checkboxes[i].checked == true) {
         amountInput[i].value = 1;
-        amountInput[i].style.border = " 2px solid #5857FD";
+        amountInput[i].style.border = " 2px solid rgb(255, 196, 0)";
       } else {
         amountInput[i].value = "";
-        amountInput[i].style.border = " 2px solid black";
+        amountInput[i].style.border = " 1px solid grey" ;
       }
     });
 }
